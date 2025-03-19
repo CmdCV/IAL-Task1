@@ -1,0 +1,32 @@
+C206 Extension - Doubly Linked List as a Queue
+==============================================
+
+[test_receive_send] Přijetí a odeslání jednoho packetu
+Queue count    : 1
+Packet count   : 1
+Queued packets :
+  - Packet { .id =  1, .priority =   0 }
+
+[test_receive_send_order] Přijetí a odeslání packetu respektuje pořadí
+Queue count    : 1
+Packet count   : 3
+Queued packets :
+  - Packet { .id =  1, .priority =   0 }
+  - Packet { .id =  2, .priority =   0 }
+  - Packet { .id =  3, .priority =   0 }
+
+[test_receive_send_priority] Přijetí a odeslání packetu respektuje prioritu
+Queue count    : 3
+Packet count   : 3
+Queued packets :
+  - Packet { .id =  2, .priority =  10 }
+  - Packet { .id =  3, .priority =   5 }
+  - Packet { .id =  1, .priority =   0 }
+
+[test_receive_send_drop] Přijetí packetu zahodí každý druhý packet při přeplnění
+Queue count    : 1
+Packet count   : 3
+Queued packets :
+  - Packet { .id =  1, .priority =   0 }
+  - Packet { .id =  3, .priority =   0 }
+  - Packet { .id =  5, .priority =   0 }
